@@ -1,11 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EECU Budget Calculator</title>
+    <link rel="stylesheet" href="../styles.css">
 </head>
-<body>
-    
+
+<body class="budget">
+    <header>
+        <a href="../Homepage/home.html" class="back budget">← Back</a>
+        <h1 class="title">EECU BUDGET <br> CALCULATOR</h1>
+        <p class="projectDesc">A Budgeting WebApp targeted specifically to highschool students transitioning to the
+            workforce. It helps them budget their funds efficiently.</p>
+            <a href="https://eecu-budget.netlify.app" id="eecuLink"></a>
+            <a href="https://github.com/nathan-dza/EECU-Budgeting" id="eecuGitLink"></a>
+    </header>
+
+    <section class="budget challenges">
+        <h2 class="title2">CHALLENGES CONQUERED</h2>
+        <ul class="projectUl">
+            <li><strong>The Problem:</strong> I wanted to add commas to separate thousands and 2 decimal places but I
+                couldn’t figure it
+                out.</li>
+            <li><strong>The Solution:</strong> After researching online, I found that “.toLocaleString” adds commas in
+                the thousands and
+                when I also added minimum and maximumFractionDigits, that also gave me the 2 decimal places I wanted.
+            </li>
+            <li><strong>The Problem:</strong> When I was doing my media queries the sidebar would go inside of the pie
+                chart.
+            </li>
+            <li><strong>The Solution:</strong> I found out that there was a positive margin-left on the sidebar that was
+                making it go
+                into the pie chart.</li>
+            <li><strong>The Problem:</strong> I wanted to add a warning that you weren’t saving enough depending on how
+                much you were
+                earning.
+            </li>
+            <li><strong>The Solution:</strong> I made an empty &lt;p&gt; tag in the HTML and in the JS I made an if
+                statement. If the
+                amount
+                saved was less than 10% of your post tax monthly income, it’d populate the
+                &lt;p&gt; tag with a message saying that you should probably save more.
+            </li>
+        </ul>
+    </section>
+
+    <img src="../Images/eecuImg.png" alt="snippet of the HTML">
+
+    <section class="budget stack">
+        <h2 class="title2">TECHNOLOGY STACK</h2>
+        <ul class="projectUl">
+            <li><strong>Languages</strong> HTML5, CSS3, and JavaScript</li>
+            <li><strong>Tools</strong> VS Code, Figma, Github</li>
+            <li><strong>The Problem:</strong>Netlify</li>
+        </ul>
+    </section>
+
+    <section class="budget concepts">
+        <h2 class="title2">CONCEPTS LEARNED</h2>
+        <ul class="projectUl">
+            <li><strong>DOM Manipulation</strong>I deepened my understanding of using JavaScript to change CSS classes
+                and IDs to make changes to the website in real time as the user is seeing it.</li>
+            <li><strong>Semantic Architecture</strong>I moved beyond simple div tags to use semantic HTML like section,
+                article, and nav for better accessibility and SEO.
+            </li>
+            <li><strong>Responsive Design</strong> I improved my media query skills, implementing multiple breakpoints
+                in my website to keep the mobile, tablet and desktop experience seamless.
+            </li>
+            <li><strong>Chart.JS & Fetch API</strong>I learned how to make a pie chart using JavaScript while grabbing
+                the data for it using Fetch API</li>
+        </ul>
+    </section>
+    <section class="budget habits">
+        <h2 class="title2">HABITS OF MIND</h2>
+        <ul class="projectUl">
+            <li><strong>Investigation: </strong>Before we started to create the website we had to investigate other
+                examples of online budget calculators and write down what ideas we wanted to implement into ours, what
+                we didn't want to implement and what new things we could add to it.</li>
+            <li><strong>Communication: </strong>Up until about the end of the project, we weren't allowed to do the code
+                ourselves at all. We had to act as a project manager and tell our “devs” what we wanted and how we
+                wanted it.
+            </li>
+        </ul>
+    </section>
 </body>
+
 </html>
