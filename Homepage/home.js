@@ -11,5 +11,5 @@ projects.addEventListener('click', function(){
 });
 
 abMe.addEventListener('click', function(){
-    window.location.href = '../Writing-Projects/wProjSelect.html';
+    window.location.href = '../About Me/abMeSelect.html';
 });

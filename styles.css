@@ -8,7 +8,7 @@
     --weight: 700;
     --bg: #3C424D;
 }
-
+/* animations */
 @keyframes upDown {
     0% {
         translate: 0 0;
@@ -32,11 +32,13 @@
         transform: rotate(3deg);
     }
 
-    100%{
+    100% {
         transform: rotate(-3deg);
     }
 
 }
+
+/* stuff that applies to a lot */
 
 body {
     display: flex;
@@ -111,16 +113,31 @@ a.Welcome {
 /* Homepage */
 body.home {
     flex-direction: column;
+    align-items: center;
+    padding: clamp(18px, 3vw, 48px);
+    box-sizing: border-box;
+}
+
+.home header {
+    width: 100%;
+    max-width: 1100px;
+    margin-bottom: 40px;
+}
+
+.home .mpr {
+    width: 100%;
+    max-width: 1100px;
 }
 
 .home h1 {
     font-size: clamp(35px, 5vw, 60px);
+    margin-top: 0;
 }
 
 .home nav {
-    display: grid;
-    grid-template-columns: auto auto;
-    gap: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 20px;
 }
 
 nav.home>* {
@@ -141,6 +158,7 @@ nav.home>* {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    flex-wrap: wrap;
     gap: 10px;
 
     & div {
@@ -163,8 +181,56 @@ section.home:hover {
 }
 
 
+@media (max-width: 900px) {
+
+    .home .aboutMe,
+    .home .portfilio,
+    .home .resume {
+        width: min(100%, 320px);
+        text-align: center;
+    }
+
+    .home .resume {
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 760px) {
+    .home nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 620px) {
+    .mpr {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .mpr>div {
+        width: min(100%, 320px);
+        height: clamp(150px, 42vw, 240px);
+    }
+
+    .home .aboutMe,
+    .home .portfilio,
+    .home .resume {
+        width: 100%;
+        max-width: 320px;
+    }
+}
+
+
 
 /* Project select */
+.pSelect {
+    align-items: center;
+    padding: clamp(18px, 3vw, 48px);
+    box-sizing: border-box;
+}
+
 .pSelect {
     flex-direction: column;
     justify-content: space-evenly;
@@ -172,6 +238,8 @@ section.home:hover {
 
 .pSelect h1 {
     font-size: clamp(50px, 5vw, 70px);
+    margin: 0;
+    text-align: center;
 }
 
 .selection {
@@ -179,6 +247,10 @@ section.home:hover {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1100px;
+    gap: 20px;
 
     & img {
         width: clamp(200px, 25vw, 400px);
@@ -200,22 +272,33 @@ section.home:hover {
     }
 }
 
-/* EECU */
-.budget {
+/* project pages */
+.budget,
+.zen,
+.zoo,
+.paper,
+.pod {
     flex-direction: column;
     align-items: center;
     padding: 3vw;
-    box-sizing: border-box;
 }
 
-.budget h1 {
+.budget h1,
+.zen h1,
+.zoo h1,
+.paper h1,
+.pod h1 {
     font-size: clamp(40px, 6vw, 80px);
     text-align: center;
     margin: 0;
     line-height: normal;
 }
 
-.budget header {
+.budget header,
+.zen header,
+.zoo header,
+.paper header,
+.pod header {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -225,7 +308,8 @@ section.home:hover {
     margin-bottom: 50px;
 }
 
-.budget a.back {
+
+a.back {
     align-self: flex-start;
     color: var(--textColor);
     font-family: var(--font);
@@ -235,11 +319,15 @@ section.home:hover {
     text-shadow: var(--textShadow);
 }
 
-.budget a.back:hover {
+a.back:hover {
     text-decoration: underline;
 }
 
-.budget .projectDesc {
+.budget .projectDesc,
+.zen .projectDesc,
+.zoo .projectDesc,
+.paper .projectDesc,
+.pod .projectDesc {
     text-decoration: none;
     text-align: center;
     font-style: italic;
@@ -248,7 +336,11 @@ section.home:hover {
     font-size: clamp(16px, 1.8vw, 22px);
 }
 
-.budget article {
+.budget article,
+.zen article,
+.zoo article,
+.paper article,
+.pod article {
     display: flex;
     flex-direction: column;
     gap: 40px;
@@ -256,14 +348,22 @@ section.home:hover {
     max-width: 1100px;
 }
 
-.budget h2.title2 {
+.budget h2.title2,
+.zen h2.title2,
+.zoo h2.title2,
+.paper h2.title2,
+.pod h2.title2 {
     font-size: clamp(20px, 2.5vw, 28px);
     margin-bottom: 15px;
     font-style: italic;
     letter-spacing: 1px;
 }
 
-.budget img {
+body.budget img,
+body.zen img,
+body.zoo img,
+body.paper img,
+body.pod img {
     width: 100%;
     max-width: 500px;
     border-radius: 15px;
@@ -271,7 +371,11 @@ section.home:hover {
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
-.budget ul {
+.budget ul,
+.zen ul,
+.zoo ul,
+.paper ul,
+.pod ul {
     font-size: clamp(15px, 1.6vw, 20px);
     text-decoration: none;
     display: block;
@@ -286,22 +390,37 @@ section.home:hover {
     text-shadow: none;
 }
 
-.budget ul li {
+.budget ul li,
+.zen ul li,
+.zoo ul li,
+.paper ul li,
+.pod ul li {
     margin-bottom: 12px;
 }
 
-.budget ul li strong {
+.budget ul li strong,
+.zen ul li strong,
+.zoo ul li strong,
+.paper ul li strong,
+.pod ul li strong {
     font-weight: 700;
     color: rgba(255, 255, 255, 0.9);
 }
 
+
+
 /* tablet/mobile freaking media queries*/
 @media (min-width: 850px) {
-    .budget article {
+
+    .budget article,
+    .zen article,
+    .zoo article,
+    .paper article,
+    .pod article {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto auto auto auto;
-        grid-template-areas: 
+        grid-template-areas:
             "cc p"
             "cc ts"
             "cl cl"
@@ -310,24 +429,200 @@ section.home:hover {
         align-items: start;
     }
 
-    .budget .challenges {
-         grid-area: cc; 
-        }
-    
-    .budget img { 
-        grid-area: p; 
+    .budget .challenges,
+    .zen .challenges,
+    .zoo .challenges,
+    .paper .challenges,
+    .pod .challenges {
+        grid-area: cc;
+    }
+
+    body.budget img,
+    body.zen img,
+    body.zoo img,
+    body.paper img,
+    body.pod img {
+        grid-area: p;
         justify-self: center;
         max-width: 100%;
         margin-top: 15px;
     }
+
+    .budget .stack,
+    .zen .stack,
+    .zoo .stack,
+    .paper .stack,
+    .pod .stack {
+        grid-area: ts;
+    }
+
+    .budget .concepts,
+    .zen .concepts,
+    .zoo .concepts,
+    .paper .concepts,
+    .pod .concepts {
+        grid-area: cl;
+    }
+
+    .budget .habits,
+    .zen .habits,
+    .zoo .habits,
+    .paper .habits,
+    .pod .habits {
+        grid-area: hm;
+    }
+}
+
+/* resume */
+body.resume {
+    flex-direction: row;
+    gap: 30px;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.resume .contact {
+    border-right: 1px solid #7889b4;
+}
+
+article.resume {
+    max-width: 750px;
+    background: #d3ddf0;
+    border: 5px solid #3d4b7a;
+    padding: 20px;
+    color: #000000;
+    font-family: Georgia, serif;
+}
+
+article.resume h1,
+article.resume h2,
+article.resume h3 {
+    text-decoration: none;
+    text-shadow: none;
+    color: #000000;
+    margin: 8px 0 4px 0;
+}
+
+article.resume h1 {
+    font-size: 40px;
+    margin-bottom: 2px;
+}
+
+article.resume h2 {
+    font-size: 18px;
+    color: #6f6f6f;
+}
+
+article.resume h3 {
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+article.resume p,
+article.resume li {
+    font-size: 13px;
+    line-height: 1.2;
+    color: #000000;
+    text-decoration: none;
+    margin: 0;
+}
+
+article.resume ul {
+    margin: 4px 0;
+    padding-left: 16px;
+}
+
+article.resume>section,
+.line1 {
+    border-top: 1px solid #7889b4;
+    padding-top: 8px;
+    margin-top: 8px;
+}
+
+.contact {
+    padding-right: 5%;
+}
+
+
+.contact div {
+    display: flex;
+    flex-direction: column;
+}
+
+.line1 {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-start;
+
+    & .skills ul {
+        display: grid;
+        grid-template-columns: auto auto;
+        column-gap: 20px;
+        margin: 0;
+    }
+}
+
+.interests ul {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    column-gap: 15px;
+}
+
+section.resume.download {
+    flex: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+section.resume.download .title {
+    font-size: 50px;
+}
+
+.download a{
+    font-size: 24px;
     
-    .budget .stack { 
-        grid-area: ts; 
+}
+
+
+/* resume media queries */
+
+@media (max-width: 1000px) {
+    body.resume {
+        flex-direction: column;
     }
-    .budget .concepts { 
-        grid-area: cl; 
+
+    .download {
+        display: flex;
+        flex-direction: row;
+        
     }
-    .budget .habits {
-         grid-area: hm; 
-        }
+}
+
+@media (max-width: 760px) {
+    .line1 {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .resume .contact {
+        border-right: none;
+        border-bottom: 1px solid #7889b4;
+        padding-right: 0;
+        padding-bottom: 15px;
+    }
+
+    .interests ul {
+        grid-template-columns: auto auto;
+    }
+
+    section.resume.download {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    section.resume.download .title {
+        font-size: 36px;
+    }
 }
