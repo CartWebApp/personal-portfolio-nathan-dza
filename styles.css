@@ -8,6 +8,7 @@
     --weight: 700;
     --bg: #3C424D;
 }
+
 /* animations */
 @keyframes upDown {
     0% {
@@ -161,7 +162,8 @@ nav.home>* {
     flex-wrap: wrap;
     gap: 10px;
 
-    & div {
+    & div,
+    & canvas {
         justify-self: center;
         background: rgba(255, 255, 255, 0.05);
         border: 1px outset rgba(255, 255, 255, 0.2);
@@ -178,6 +180,50 @@ section.home:hover {
 
 .home p {
     text-decoration: none;
+}
+
+
+/* Homepage boxes */
+#aboutMeBox img,
+#portfolioBox img,
+#resumeBox img {
+    min-width: 0;
+    min-height: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* about me */
+#aboutMeBox {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    place-items: center;
+}
+
+/* project */
+#portfolioBox {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: 1fr;
+    place-items: center;
+    gap: 10px;
+}
+
+/* resume */
+#resumeBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#resumeBox img {
+    width: 70%;
+    height: auto;
+    max-width: 90%;
+    max-height: 90%;
 }
 
 
@@ -209,7 +255,8 @@ section.home:hover {
         align-items: center;
     }
 
-    .mpr>div {
+    .mpr div,
+    .mpr canvas {
         width: min(100%, 320px);
         height: clamp(150px, 42vw, 240px);
     }
@@ -281,6 +328,7 @@ section.home:hover {
     flex-direction: column;
     align-items: center;
     padding: 3vw;
+    box-sizing: border-box;
 }
 
 .budget h1,
@@ -317,6 +365,7 @@ a.back {
     font-size: clamp(16px, 2vw, 20px);
     margin-bottom: 20px;
     text-shadow: var(--textShadow);
+    font-size: 2rem;
 }
 
 a.back:hover {
@@ -409,7 +458,7 @@ body.pod img {
 
 
 
-/* tablet/mobile freaking media queries*/
+/* tablet/mobile media queries*/
 @media (min-width: 850px) {
 
     .budget article,
@@ -580,9 +629,9 @@ section.resume.download .title {
     font-size: 50px;
 }
 
-.download a{
+.download a {
     font-size: 24px;
-    
+
 }
 
 
@@ -596,7 +645,7 @@ section.resume.download .title {
     .download {
         display: flex;
         flex-direction: row;
-        
+
     }
 }
 
@@ -625,4 +674,78 @@ section.resume.download .title {
     section.resume.download .title {
         font-size: 36px;
     }
+}
+
+/* five year plan */
+
+.fiveY {
+    flex-direction: column;
+
+}
+
+.fiveY .title {
+    font-size: 50px;
+}
+
+.fiveY ol {
+    color: var(--textColor);
+    font-family: var(--font);
+    text-shadow: var(--textShadow);
+}   
+
+section.fiveY {
+    display: flex;
+    border: 1px outset rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    margin: 50px;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+section.fiveY:hover {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    animation-name: tilt;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+}
+
+.fiveY header{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.fiveY.hs {
+    margin-right: 40%;
+}
+
+.fiveY.coll29 {
+    margin-left: 40%;
+}
+
+.fiveY.coll31 {
+    margin-right: 40%;
+}
+
+/* cart review */
+.cartRev{
+    flex-direction: column;
+}
+
+.cartRev h1{
+    font-size: clamp(40px, 7vw, 75px);
+    margin-left: 20px;
+}
+
+.cartRev section{
+    display: flex;
+    border: 1px outset rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    margin: 50px;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
 }
